@@ -1,0 +1,10 @@
+include:
+  # - project: 'skale-5/gitlab-ci'
+  #   ref: main
+  #   file: '/templates/workflows/.gitlab-ci.common.yml'
+
+  - remote: https://gitlab.com/renovate-bot/renovate-runner/-/raw/v12.14.3/templates/renovate.gitlab-ci.yml
+
+renovate:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $SCHEDULE_ACTION == "renovate"'
