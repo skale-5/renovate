@@ -1,0 +1,36 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "packageRules": [
+      {
+        "matchDepTypes": ["devDependencies"],
+        "matchUpdateTypes": ["patch", "minor"],
+        "groupName": "devDependencies (non-major)"
+      }
+    ],
+    "extends": [
+      "config:base",
+      ":preserveSemverRanges",
+      ":dependencyDashboard",
+      ":rebaseStalePrs",
+      ":enableVulnerabilityAlertsWithLabel('security')",
+      ":semanticPrefixFixDepsChoreOthers",
+      "group:recommended"
+    ],
+    "helmv3": {
+        "registryAliases": {
+            "stable": "https://charts.helm.sh/stable"
+        },
+        "commitMessageTopic": "helm chart {{depName}}",
+        "fileMatch": [
+            "(^|/)Chart\\.yaml$"
+        ]
+    },
+    "regexManagers": [
+        {
+            "fileMatch": ["^cookiecutter.json$"],
+            "matchStrings": ["chart_version(?<currentValue>.*?)\\n"],
+            "depNameTemplate": "yarn",
+            "datasourceTemplate": "npm"
+          }
+    ]
+}

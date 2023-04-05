@@ -1,0 +1,33 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "packageRules": [
+      {
+        "matchDepTypes": ["devDependencies"],
+        "matchUpdateTypes": ["patch", "minor"],
+        "groupName": "devDependencies (non-major)"
+      }
+    ],
+    "extends": [
+      "config:base",
+      ":preserveSemverRanges",
+      ":dependencyDashboard",
+      ":rebaseStalePrs",
+      ":enableVulnerabilityAlertsWithLabel('security')",
+      ":semanticPrefixFixDepsChoreOthers",
+      "group:recommended"
+    ],
+    "terraform": {
+        "commitMessageTopic": "Terraform {{depName}}",
+        "fileMatch": [
+            "\\.tf$"
+        ],
+        "pinDigests": false
+    },
+    "tflint-plugin": {
+        "commitMessageTopic": "TFLint plugin {{depName}}",
+        "fileMatch": [
+            "\\.tflint\\.hcl$"
+        ],
+        "extractVersion": "^v(?<version>.*)$"
+    }
+}
