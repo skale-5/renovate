@@ -1,0 +1,28 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "packageRules": [
+      {
+        "depTypeList": [ "devDependencies", "require-dev" ],
+        "updateTypes": [ "patch", "minor", "digest"],
+        "groupName": "devDependencies (non-major)"
+      }
+    ],
+    "extends": [
+      "config:base",
+      ":preserveSemverRanges",
+      ":dependencyDashboard",
+      ":rebaseStalePrs",
+      ":enableVulnerabilityAlertsWithLabel('security')",
+      "group:recommended"
+    ],
+    "pre-commit": {
+        "commitMessageTopic": "pre-commit hook {{depName}}",
+        "enabled": true,
+        "fileMatch": [
+            "(^|/)\\.pre-commit-config\\.yaml$"
+        ],
+        "prBodyNotes": [
+            "Note: The `pre-commit` manager in Renovate is not supported by the `pre-commit` maintainers or community. Please do not report any problems there, instead [create a Discussion in the Renovate repository](https://github.com/renovatebot/renovate/discussions/new) if you have any questions."
+        ]
+    }
+  }
