@@ -18,6 +18,7 @@
       ":semanticPrefixFixDepsChoreOthers",
       "group:recommended"
     ],
+    
     "pre-commit": {
         "commitMessageTopic": "pre-commit hook {{depName}}",
         "enabled": true,

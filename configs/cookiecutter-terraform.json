@@ -18,6 +18,7 @@
       ":semanticPrefixFixDepsChoreOthers",
       "group:recommended"
     ],
+    
     "terraform": {
         "commitMessageTopic": "Terraform {{depName}}",
         "fileMatch": [
@@ -32,12 +33,13 @@
         ],
         "extractVersion": "^v(?<version>.*)$"
     },
+
     "regexManagers": [
         {
             "fileMatch": ["^cookiecutter.json$"],
             "matchStrings": ["terraform_version(?<currentValue>.*?)\\n"],
             "depNameTemplate": "yarn",
             "datasourceTemplate": "npm"
-          }
+        }
     ]
 }
