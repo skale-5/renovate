@@ -19,20 +19,17 @@
       "group:recommended"
     ],
 
-    "helmv3": {
-        "registryAliases": {
-            "stable": "https://charts.helm.sh/stable"
-        },
-        "commitMessageTopic": "Helm chart {{depName}}",
+    "kustomize": {
+        "commitMessageTopic": "Kustomize manifest {{depName}}",
         "fileMatch": [
-            "(^|/)Chart\\.yaml$"
+            "(^|/)kustomization\\.ya?ml$"
         ]
     },
     
     "regexManagers": [
         {
             "fileMatch": ["^cookiecutter.json$"],
-            "matchStrings": ["chart_version(?<currentValue>.*?)\\n"],
+            "matchStrings": ["manifest_version(?<currentValue>.*?)\\n"],
             "depNameTemplate": "yarn",
             "datasourceTemplate": "npm"
         }

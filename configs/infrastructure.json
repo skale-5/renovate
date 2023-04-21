@@ -18,6 +18,7 @@
       ":semanticPrefixFixDepsChoreOthers",
       "group:recommended"
     ],
+
     "terraform": {
         "commitMessageTopic": "Terraform {{depName}}",
         "fileMatch": [

@@ -19,20 +19,37 @@
       "group:recommended"
     ],
 
-    "helmv3": {
-        "registryAliases": {
-            "stable": "https://charts.helm.sh/stable"
-        },
-        "commitMessageTopic": "Helm chart {{depName}}",
+    "terraform": {
+        "commitMessageTopic": "Terraform {{depName}}",
         "fileMatch": [
-            "(^|/)Chart\\.yaml$"
+            "\\.tf$"
+        ],
+        "pinDigests": false
+    },
+    "tflint-plugin": {
+        "commitMessageTopic": "TFLint plugin {{depName}}",
+        "fileMatch": [
+            "\\.tflint\\.hcl$"
+        ],
+        "extractVersion": "^v(?<version>.*)$"
+    },
+    "kustomize": {
+        "commitMessageTopic": "Kustomize manifest {{depName}}",
+        "fileMatch": [
+            "(^|/)kustomization\\.ya?ml$"
         ]
     },
-    
+
     "regexManagers": [
         {
             "fileMatch": ["^cookiecutter.json$"],
-            "matchStrings": ["chart_version(?<currentValue>.*?)\\n"],
+            "matchStrings": ["terraform_version(?<currentValue>.*?)\\n"],
+            "depNameTemplate": "yarn",
+            "datasourceTemplate": "npm"
+        },
+        {
+            "fileMatch": ["^cookiecutter.json$"],
+            "matchStrings": ["manifest_version(?<currentValue>.*?)\\n"],
             "depNameTemplate": "yarn",
             "datasourceTemplate": "npm"
         }
