@@ -30,8 +30,7 @@
             ],
             "depNameTemplate": "redis",
             "registryUrlTemplate": "https://charts.bitnami.com/bitnami",
-            "datasourceTemplate": "helm",
-            "versioningTemplate": "helm"
+            "datasourceTemplate": "helm"
         }
     ]
 }
