@@ -28,7 +28,7 @@
             "matchStrings": [
                 "CHART_VERSION=\"(?<currentValue>.*)\""
             ],
-            "depNameTemplate": "bitnami/redis",
+            "depNameTemplate": "redis",
             "registryUrlTemplate": "https://charts.bitnami.com/bitnami",
             "datasourceTemplate": "helm"
         }
