@@ -1,6 +1,2 @@
 include:
   - remote: https://gitlab.com/renovate-bot/renovate-runner/-/raw/v12.14.1/templates/renovate.gitlab-ci.yml
-
-renovate:
-  rules:
-    - if: '$SCHEDULE_ACTION == "renovate"'
