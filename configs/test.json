@@ -28,8 +28,8 @@
             "matchStrings": [
                 "CHART_VERSION=\"(?<currentValue>.*)\""
             ],
-            "depNameTemplate": "cert-manager",
-            "registryUrlTemplate": "https://charts.jetstack.io/",
+            "depNameTemplate": "bitnami/redis",
+            "registryUrlTemplate": "https://charts.bitnami.com/bitnami",
             "datasourceTemplate": "helm"
         }
     ]
