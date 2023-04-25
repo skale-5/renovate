@@ -18,18 +18,18 @@
       ":semanticPrefixFixDepsChoreOthers",
       "group:recommended"
     ],
-    "enabledManagers": ["gitlabci", "regex"],
+    "enabledManagers": ["regex"],
 
     "regexManagers": [
         {
             "fileMatch": [
-                "(^|/)Chart\\.yaml$"
+                "(^|/)chart\\.sh$"
             ],
             "matchStrings": [
-                "version: (?<currentValue>.*)"
+                "CHART_VERSION=\"(?<currentValue>.*)\""
             ],
-            "depNameTemplate": "cert-manager",
-            "registryUrlTemplate": "https://charts.jetstack.io/",
+            "depNameTemplate": "redis",
+            "registryUrlTemplate": "https://charts.bitnami.com/bitnami",
             "datasourceTemplate": "helm"
         }
     ]
