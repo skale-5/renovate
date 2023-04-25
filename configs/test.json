@@ -29,9 +29,9 @@
                 "CHART_VERSION=\"(?<currentValue>.*)\""
             ],
             "depNameTemplate": "redis",
-            "depTypeTemplate": "pre",
             "registryUrlTemplate": "https://charts.bitnami.com/bitnami",
-            "datasourceTemplate": "helm"
+            "datasourceTemplate": "helm",
+            "versioningTemplate": "helm"
         }
     ]
 }
