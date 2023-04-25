@@ -18,7 +18,7 @@
       ":semanticPrefixFixDepsChoreOthers",
       "group:recommended"
     ],
-    "enabledManagers": [],
+    "enabledManagers": ["gitlabci"],
 
     "regexManagers": [
         {
