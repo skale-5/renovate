@@ -28,7 +28,8 @@
             "matchStrings": [
                 "^\\s*-\\sname:\\s+['\"]?.*['\"]?\\n\\s*version:\\s+['\"](?<currentValue>.*?)['\"]?\\n\\s*repository:\\s+['\"]?.*['\"]?"
             ],
-            "depNameTemplate": "redis/redis",
+            "depNameTemplate": "redis",
+            "registryUrlTemplate": "https://charts.bitnami.com/bitnami",
             "datasourceTemplate": "helm"
         }
     ]
