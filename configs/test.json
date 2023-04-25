@@ -22,9 +22,13 @@
 
     "regexManagers": [
         {
-            "fileMatch": ["(^|/)Chart\\.yaml$"],
+            "fileMatch": [
+                "(^|/)Chart\\.yaml$",
+                "(^|/)chart\\.sh$"
+            ],
             "matchStrings": [
-                "^\\s*-\\sname:\\s+['\"]?(?<depName>.*?)['\"]?\\n\\s*version:\\s+['\"](?<currentValue>.*?)['\"]?\\n\\s*repository:\\s+['\"]?(?<registryUrl>.*?)['\"]?"
+                "^\\s*-\\sname:\\s+['\"]?(?<depName>.*?)['\"]?\\n\\s*version:\\s+['\"](?<currentValue>.*?)['\"]?\\n\\s*repository:\\s+['\"]?(?<registryUrl>.*?)['\"]?",
+                "^CHART_VERSION=['\"]?(?<depName>.*?)['\"]?"
             ],
             "datasourceTemplate": "helm"
         }
