@@ -19,3 +19,13 @@ Pour utiliser renovate sur un repo présent dans https://git.sk5.io/skale-5, il 
     ]
 }
 ```
+
+Pour utiliser les conf sur des repos externes à git.sk5.io, on peut procéder de la manière suivante :
+```json
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "github>skale-5/renovate//configs/basic"
+    ]
+}
+```
