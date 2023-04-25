@@ -3,4 +3,4 @@ include:
 
 renovate:
   rules:
-    - if: '$CI_PIPELINE_SOURCE == "schedule" && $SCHEDULE_ACTION == "renovate"'
+    - if: '$SCHEDULE_ACTION == "renovate"'
