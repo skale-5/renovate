@@ -26,10 +26,10 @@
                 "(^|/)Chart\\.yaml$"
             ],
             "matchStrings": [
-                "^\\s*-\\sname:\\s+['\"]?.*['\"]?\\n\\s*version:\\s+['\"](?<currentValue>.*?)['\"]?\\n\\s*repository:\\s+['\"]?.*['\"]?"
+                "version: (?<currentValue>.*)"
             ],
-            "depNameTemplate": "redis",
-            "registryUrlTemplate": "https://charts.bitnami.com/bitnami",
+            "depNameTemplate": "cert-manager",
+            "registryUrlTemplate": "https://charts.jetstack.io/",
             "datasourceTemplate": "helm"
         }
     ]
