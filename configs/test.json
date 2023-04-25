@@ -1,0 +1,32 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "labels": ["RENOVATE"],
+    "prHourlyLimit": 50,
+    "packageRules": [
+      {
+        "matchDepTypes": ["devDependencies"],
+        "matchUpdateTypes": ["patch", "minor"],
+        "groupName": "devDependencies (non-major)"
+      }
+    ],
+    "extends": [
+      "config:base",
+      ":preserveSemverRanges",
+      ":dependencyDashboard",
+      ":rebaseStalePrs",
+      ":enableVulnerabilityAlertsWithLabel('security')",
+      ":semanticPrefixFixDepsChoreOthers",
+      "group:recommended"
+    ],
+
+
+    "regexManagers": [
+        {
+            "fileMatch": ["(^|/)Chart\\.yaml$"],
+            "matchStrings": [
+                "^\\s*-\\sname:\\s+['\"]?(?<depName>.*?)['\"]?\\n\\s*version:\\s+['\"](?<currentValue>.*?)['\"]?\\n\\s*repository:\\s+['\"]?(?<registryUrl>.*?)['\"]?"
+            ],
+            "datasourceTemplate": "helm"
+        }
+    ]
+}
