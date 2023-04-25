@@ -1,2 +1,6 @@
 include:
   - remote: https://gitlab.com/renovate-bot/renovate-runner/-/raw/v12.14.1/templates/renovate.gitlab-ci.yml
+
+renovate:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $SCHEDULE_ACTION == "renovate"'
