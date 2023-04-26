@@ -19,34 +19,6 @@
       "group:recommended"
     ],
 
-    "terraform": {
-        "commitMessageTopic": "Terraform {{depName}}",
-        "fileMatch": [
-            "\\.tf$"
-        ],
-        "pinDigests": false
-    },
-    "tflint-plugin": {
-        "commitMessageTopic": "TFLint plugin {{depName}}",
-        "fileMatch": [
-            "\\.tflint\\.hcl$"
-        ],
-        "extractVersion": "^v(?<version>.*)$"
-    },
-    "helmv3": {
-        "registryAliases": {
-            "stable": "https://charts.helm.sh/stable"
-        },
-        "commitMessageTopic": "helm chart {{depName}}",
-        "fileMatch": [
-            "(^|/)Chart\\.yaml$"
-        ]
-    },
-    "helm-values": {
-        "commitMessageTopic": "helm values {{depName}}",
-        "fileMatch": [
-            "(^|/)values\\.yaml$"
-        ],
-        "pinDigests": false
-    }
+    "enabledManagers": ["regex", "terraform", "tflint-plugin", "helmv3", "helm-values"]
+
 }

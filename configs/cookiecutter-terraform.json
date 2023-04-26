@@ -19,23 +19,7 @@
       "group:recommended"
     ],
 
-    "enabledManagers": ["regex", "helmv3"],
-    
-    "terraform": {
-        "commitMessageTopic": "Terraform {{depName}}",
-        "fileMatch": [
-            "\\.tf$"
-        ],
-        "pinDigests": false
-    },
-    "tflint-plugin": {
-        "commitMessageTopic": "TFLint plugin {{depName}}",
-        "fileMatch": [
-            "\\.tflint\\.hcl$"
-        ],
-        "extractVersion": "^v(?<version>.*)$"
-    },
-
+    "enabledManagers": ["regex", "terraform", "tflint-plugin"],
     
     "regexManagers": [
         {
@@ -45,6 +29,14 @@
             "depNameTemplate": "hashicorp/terraform",
             "datasourceTemplate": "github-releases",
             "versioningTemplate": "hashicorp"
+        },
+        {
+            "description": "Update version from cookiecutter.json",
+            "fileMatch": ["^cookiecutter\\.json$"],
+            "matchStrings": [
+                "\"_renovate\"\\s*:\\s*\"datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\"\\s*,\\s*\"(chart_version|app_version)\"\\s*:\\s*\"(?<currentValue>.*)\""
+            ],
+            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
         }
     ]
 }

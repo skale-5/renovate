@@ -19,44 +19,40 @@
       "group:recommended"
     ],
 
-    "enabledManagers": ["regex", "helmv3"],
-
-    "terraform": {
-        "commitMessageTopic": "Terraform {{depName}}",
-        "fileMatch": [
-            "\\.tf$"
-        ],
-        "pinDigests": false
-    },
-    "tflint-plugin": {
-        "commitMessageTopic": "TFLint plugin {{depName}}",
-        "fileMatch": [
-            "\\.tflint\\.hcl$"
-        ],
-        "extractVersion": "^v(?<version>.*)$"
-    },
-    "helmv3": {
-        "registryAliases": {
-            "stable": "https://charts.helm.sh/stable"
-        },
-        "commitMessageTopic": "Helm chart {{depName}}",
-        "fileMatch": [
-            "(^|/)Chart\\.yaml$"
-        ]
-    },
+    "enabledManagers": ["regex", "terraform", "tflint-plugin", "helmv3"],
 
     "regexManagers": [
         {
-            "fileMatch": ["^cookiecutter.json$"],
-            "matchStrings": ["terraform_version(?<currentValue>.*?)\\n"],
-            "depNameTemplate": "yarn",
-            "datasourceTemplate": "npm"
+            "description": "Update TF version from cookiecutter.json",
+            "fileMatch": ["^cookiecutter\\.json$"],
+            "matchStrings": ["\"terraform_version\"\\s*:\\s*\"(?<currentValue>.*?)\""],
+            "depNameTemplate": "hashicorp/terraform",
+            "datasourceTemplate": "github-releases",
+            "versioningTemplate": "hashicorp"
         },
         {
-            "fileMatch": ["^cookiecutter.json$"],
-            "matchStrings": ["chart_version(?<currentValue>.*?)\\n"],
-            "depNameTemplate": "yarn",
-            "datasourceTemplate": "npm"
+            "description": "Update version from cookiecutter.json",
+            "fileMatch": ["^cookiecutter\\.json$"],
+            "matchStrings": [
+                "\"_renovate\"\\s*:\\s*\"datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\"\\s*,\\s*\"(chart_version|app_version)\"\\s*:\\s*\"(?<currentValue>.*)\""
+            ],
+            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+        },
+        {
+            "description": "Update version from chart.sh",
+            "fileMatch": ["(^|/)chart\\.sh$"],
+            "matchStrings": [
+                "#\\s?renovate\\s?: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s*CHART_VERSION=['\"](?<currentValue>.*)['\"]"
+            ],
+            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}helm{{/if}}"
+        },
+        {
+            "description": "Update version from Chart.yaml",
+            "fileMatch": ["(^|/)Chart\\.yaml$"],
+            "matchStrings": [
+                "#\\s?renovate\\s?: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s*(version|appVersion):\\s*['\"]?(?<currentValue>.*)['\"]?"
+            ],
+            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}helm{{/if}}"
         }
     ]
 }

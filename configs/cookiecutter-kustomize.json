@@ -19,21 +19,16 @@
       "group:recommended"
     ],
 
-    "enabledManagers": ["regex", "helmv3"],
+    "enabledManagers": ["regex", "kustomize"],
 
-    "kustomize": {
-        "commitMessageTopic": "Kustomize manifest {{depName}}",
-        "fileMatch": [
-            "(^|/)kustomization\\.ya?ml$"
-        ]
-    },
-    
     "regexManagers": [
         {
-            "fileMatch": ["^cookiecutter.json$"],
-            "matchStrings": ["manifest_version(?<currentValue>.*?)\\n"],
-            "depNameTemplate": "yarn",
-            "datasourceTemplate": "npm"
+            "description": "Update version from cookiecutter.json",
+            "fileMatch": ["^cookiecutter\\.json$"],
+            "matchStrings": [
+                "\"_renovate\"\\s*:\\s*\"datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\"\\s*,\\s*\"(chart_version|app_version)\"\\s*:\\s*\"(?<currentValue>.*)\""
+            ],
+            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
         }
     ]
 }
