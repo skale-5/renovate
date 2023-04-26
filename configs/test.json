@@ -18,10 +18,11 @@
       ":semanticPrefixFixDepsChoreOthers",
       "group:recommended"
     ],
-    "enabledManagers": ["regex"],
+    "enabledManagers": ["regex", "helmv3"],
 
     "regexManagers": [
         {
+            "description": "Update Helm Chart from Cookiecutter project",
             "fileMatch": ["^cookiecutter\\.json$"],
             "matchStrings": [
                 "\"_renovate\"\\s*:\\s*\"datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\"\\s*,\\s*\"chart_version\"\\s*:\\s*\"(?<currentValue>.*)\""
