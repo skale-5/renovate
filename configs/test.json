@@ -18,7 +18,7 @@
       ":semanticPrefixFixDepsChoreOthers",
       "group:recommended"
     ],
-    
+
     "enabledManagers": ["regex", "helmv3"],
 
     "regexManagers": [
@@ -27,21 +27,24 @@
             "fileMatch": ["^cookiecutter\\.json$"],
             "matchStrings": [
                 "\"_renovate\"\\s*:\\s*\"datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\"\\s*,\\s*\"(chart_version|app_version)\"\\s*:\\s*\"(?<currentValue>.*)\""
-            ]
+            ],
+            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
         },
         {
             "description": "Update version from chart.sh",
             "fileMatch": ["(^|/)cookiecutter\\.json$"],
             "matchStrings": [
                 "#\\s?renovate\\s?: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s*CHART_VERSION=['\"](?<currentValue>.*)['\"]"
-            ]
+            ],
+            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
         },
         {
             "description": "Update version from Chart.yaml",
             "fileMatch": ["(^|/)Chart\\.yaml$"],
             "matchStrings": [
                 "#\\s?renovate\\s?: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s*(version|appVersion):\\s*['\"]?(?<currentValue>.*)['\"]?"
-            ]
+            ],
+            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
         }
     ]
 }
