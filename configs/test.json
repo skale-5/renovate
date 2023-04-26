@@ -27,9 +27,9 @@
             ],
             "matchStrings": [
                 "^CHART_REPO_URL=['\"](?<registryUrl>.*)['\"]",
-                "^CHART_PATH=['\"].*/(?<depName>.*)['\"]",
                 "^CHART_VERSION=['\"](?<currentValue>.*)['\"]"
             ],
+            "depNameTemplate": "redis",
             "datasourceTemplate": "helm"
         }
     ]
