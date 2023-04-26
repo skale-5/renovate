@@ -32,7 +32,7 @@
         },
         {
             "description": "Update version from chart.sh",
-            "fileMatch": ["(^|/)cookiecutter\\.json$"],
+            "fileMatch": ["(^|/)chart\\.sh$"],
             "matchStrings": [
                 "#\\s?renovate\\s?: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s*CHART_VERSION=['\"](?<currentValue>.*)['\"]"
             ],
