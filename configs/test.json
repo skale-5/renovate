@@ -26,7 +26,7 @@
                 "(^|/)chart\\.sh$"
             ],
             "matchStrings": [
-                "^CHART_VERSION=\"(?<currentValue>.*)\""
+                "CHART_VERSION=\"(?<currentValue>.*)\""
             ],
             "registryUrlTemplate": "https://charts.bitnami.com/bitnami",
             "depNameTemplate": "redis",
