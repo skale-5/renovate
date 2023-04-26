@@ -19,7 +19,7 @@
       "group:recommended"
     ],
 
-    "enabledManagers": ["regex", "helmv3"],
+    "enabledManagers": ["regex", "helmv3", "terraform"],
 
     "regexManagers": [
         {
