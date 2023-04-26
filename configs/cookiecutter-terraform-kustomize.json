@@ -19,6 +19,8 @@
       "group:recommended"
     ],
 
+    "enabledManagers": ["regex", "helmv3"],
+
     "terraform": {
         "commitMessageTopic": "Terraform {{depName}}",
         "fileMatch": [

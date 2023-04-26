@@ -45,6 +45,14 @@
                 "#\\s?renovate\\s?: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s*(version|appVersion):\\s*['\"]?(?<currentValue>.*)['\"]?"
             ],
             "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+        },
+        {
+            "description": "Update TF version from cookiecutter.json",
+            "fileMatch": ["^cookiecutter\\.json$"],
+            "matchStrings": ["\"terraform_version\"\\s*:\\s*\"(?<currentValue>.*?)\""],
+            "depNameTemplate": "hashicorp/terraform",
+            "datasourceTemplate": "github-releases",
+            "versioningTemplate": "hashicorp"
         }
     ]
 }

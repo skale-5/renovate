@@ -18,6 +18,8 @@
       ":semanticPrefixFixDepsChoreOthers",
       "group:recommended"
     ],
+
+    "enabledManagers": ["regex", "helmv3"],
     
     "terraform": {
         "commitMessageTopic": "Terraform {{depName}}",
@@ -34,12 +36,15 @@
         "extractVersion": "^v(?<version>.*)$"
     },
 
+    
     "regexManagers": [
         {
-            "fileMatch": ["^cookiecutter.json$"],
-            "matchStrings": ["terraform_version(?<currentValue>.*?)\\n"],
-            "depNameTemplate": "yarn",
-            "datasourceTemplate": "npm"
+            "description": "Update TF version from cookiecutter.json",
+            "fileMatch": ["^cookiecutter\\.json$"],
+            "matchStrings": ["\"terraform_version\"\\s*:\\s*\"(?<currentValue>.*?)\""],
+            "depNameTemplate": "hashicorp/terraform",
+            "datasourceTemplate": "github-releases",
+            "versioningTemplate": "hashicorp"
         }
     ]
 }

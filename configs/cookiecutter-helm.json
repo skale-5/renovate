@@ -19,6 +19,8 @@
       "group:recommended"
     ],
 
+    "enabledManagers": ["regex", "helmv3"],
+
     "helmv3": {
         "registryAliases": {
             "stable": "https://charts.helm.sh/stable"

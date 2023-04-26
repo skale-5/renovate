@@ -19,6 +19,8 @@
       "group:recommended"
     ],
 
+    "enabledManagers": ["regex", "helmv3"],
+
     "kustomize": {
         "commitMessageTopic": "Kustomize manifest {{depName}}",
         "fileMatch": [

@@ -18,19 +18,6 @@
       ":semanticPrefixFixDepsChoreOthers",
       "group:recommended"
     ],
-    
-    "terraform": {
-        "commitMessageTopic": "Terraform {{depName}}",
-        "fileMatch": [
-            "\\.tf$"
-        ],
-        "pinDigests": false
-    },
-    "tflint-plugin": {
-        "commitMessageTopic": "TFLint plugin {{depName}}",
-        "fileMatch": [
-            "\\.tflint\\.hcl$"
-        ],
-        "extractVersion": "^v(?<version>.*)$"
-    }
+
+    "enabledManagers": ["regex", "terraform", "tflint-plugin"]
 }
