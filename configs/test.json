@@ -22,9 +22,9 @@
 
     "regexManagers": [
         {
-            "fileMatch": ["(^|/)chart\\.sh$"],
+            "fileMatch": ["^cookiecutter\\.json$"],
             "matchStrings": [
-                "\"_renovate\"\\s*:\\s*\"datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))? chart_version=(?<currentValue>.*)\""
+                "\"_renovate\"\\s*:\\s*\"datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\"\\s*,\\s*\"chart_version\"\\s*:\\s*\"(?<currentValue>.*)\""
             ]
         }
     ]
