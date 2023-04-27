@@ -43,6 +43,8 @@ Vous pourez également spécifier le versionning.
 <br />
 
 ### cookiecutter.json
+Valable pour maintenir la version de tout type de programme.
+
 Dans ce fichier, les commentaires prendront la forme suivante :
 ```json
 {
@@ -57,16 +59,20 @@ Dans ce fichier, les commentaires prendront la forme suivante :
 <br />
 
 ### chart.sh
+Uniquement valable pour maintenir "CHART_VERSION".
+
 Dans ce fichier, les commentaires prendront la forme suivante :
 ```bash
 # renovate: datasource=helm depName=redis registryUrl=https://charts.bitnami.com/bitnami
-A_MAINTENIR="16.13.0"
+CHART_VERSION="16.13.0"
 ```
-*Dans ce cas illustré, Renovate proposera ou fera toujours des changements de version pour "A_MAINTENIR", en utilisant la dernière version disponnible de la chart Helm de Redis dans la registry Bitnami.*
+*Dans ce cas illustré, Renovate proposera ou fera toujours des changements de version pour "CHART_VERSION", en utilisant la dernière version disponnible de la chart Helm de Redis dans la registry Bitnami.*
 
 <br />
 
 ### Chart.sh
+Uniquement valable pour maintenir "version" (du chart) ou "appVersion".
+
 ⚠️ La version des dépendances est maintenue automatiquement ; n'y ajoutez pas de commentaire !
 
 Dans ce fichier, les commentaires prendront la forme suivante (même forme que pour chart.sh) :
