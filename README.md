@@ -31,7 +31,7 @@ Pour utiliser les conf sur des repos externes à git.sk5.io, on peut procéder d
 ```
 <br />
 
-### Maintenir à jour une version dans...
+## Maintenir à jour une version dans...
 Utilisez un commentaire sur la ligne qui précède la version à maintenir à jour.
 
 Vous spécifierez au moins la datasource et la depName, ainsi que la registryUrl si cela est nécessaire.
@@ -40,7 +40,7 @@ Vous pourez également spécifier le versionning.
 
 <br />
 
-#### cookiecutter.json
+### cookiecutter.json
 Dans ce fichier, les commentaires prendront la forme suivante :
 ```json
 {
@@ -52,7 +52,7 @@ Dans ce fichier, les commentaires prendront la forme suivante :
 
 <br />
 
-#### chart.sh
+### chart.sh
 Dans ce fichier, les commentaires prendront la forme suivante :
 ```bash
 # renovate: datasource=helm depName=redis registryUrl=https://charts.bitnami.com/bitnami
@@ -62,7 +62,7 @@ A_MAINTENIR="16.13.0"
 
 <br />
 
-#### Chart.sh
+### Chart.sh
 ⚠️ La version des dépendances est maintenue automatiquement ; n'y ajoutez pas de commentaire !
 
 Dans ce fichier, les commentaires prendront la forme suivante (même forme que pour chart.sh) :
@@ -87,4 +87,4 @@ dependencies:
 ```
 *Dans ce cas illustré, Renovate proposera ou fera toujours des changements de version pour "version" (du Chart), en utilisant la dernière version disponnible de la chart Helm de Redis dans la registry Bitnami.*
 
-Il proposera ou fera également des changements de version pour "appVersion", en utilisant la dernière version disponnible du container Docker, dans la registry Docker Hub.*
+*Il proposera ou fera également des changements de version pour "appVersion", en utilisant la dernière version disponnible du container Docker, dans la registry Docker Hub.*
