@@ -52,7 +52,7 @@ Dans ce fichier, les commentaires prendront la forme suivante :
 ```
 *Dans ce cas illustré, Renovate proposera ou fera toujours des changements de version pour "a_maintenir", en utilisant la dernière version disponnible de la chart Helm de Redis dans la registry Bitnami.*
 
-💡 Notez que la version de TF dispose d'un regexManager dédié, inutile d'ajouter un commentaire pour la gérer.
+💡 Notez que la version de TF dispose d'un regexManager dédié, inutile d'ajouter un commentaire pour la maintenir.
 
 <br />
 
