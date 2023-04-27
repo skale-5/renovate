@@ -19,6 +19,6 @@
       "group:recommended"
     ],
 
-    "enabledManagers": ["regex", "terraform", "tflint-plugin", "helmv3", "helm-values"]
+    "enabledManagers": ["regex", "pre-commit", "gitlabci", "gitlabci-include", "terraform", "tflint-plugin", "helmv3", "helm-values"]
 
 }

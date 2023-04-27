@@ -19,7 +19,7 @@
       "group:recommended"
     ],
 
-    "enabledManagers": ["regex", "kustomize"],
+    "enabledManagers": ["regex", "pre-commit", "gitlabci", "gitlabci-include", "kustomize"],
 
     "regexManagers": [
         {
