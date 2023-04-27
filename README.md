@@ -70,7 +70,7 @@ CHART_VERSION="16.13.0"
 
 <br />
 
-### Chart.sh
+### Chart.yaml
 Uniquement valable pour maintenir "version" (du chart) ou "appVersion".
 
 ⚠️ La version des dépendances est maintenue automatiquement ; n'y ajoutez pas de commentaire !
