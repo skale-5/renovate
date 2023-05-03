@@ -1,6 +1,6 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "labels": ["RENOVATE"],
+    "labels": ["RENOVATE", "TRAVAUX", "FORFAIT-RUN"],
     "prHourlyLimit": 50,
     "packageRules": [
       {
@@ -19,25 +19,9 @@
       "group:recommended"
     ],
 
-    "enabledManagers": ["regex", "pre-commit", "gitlabci", "gitlabci-include", "helmv3", "terraform", "terraform-version"],
+    "enabledManagers": ["regex", "pre-commit", "gitlabci", "gitlabci-include", "terraform", "tflint-plugin", "helmv3", "helm-values", "kustomize"],
 
     "regexManagers": [
-        {
-            "description": "Update TF version from cookiecutter.json",
-            "fileMatch": ["^cookiecutter\\.json$"],
-            "matchStrings": ["\"terraform_version\"\\s*:\\s*\"(?<currentValue>.*?)\""],
-            "depNameTemplate": "hashicorp/terraform",
-            "datasourceTemplate": "github-releases",
-            "versioningTemplate": "hashicorp"
-        },
-        {
-            "description": "Update version from cookiecutter.json",
-            "fileMatch": ["^cookiecutter\\.json$"],
-            "matchStrings": [
-                "\"_renovate\"\\s*:\\s*\"datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\"\\s*,\\s*\".*\"\\s*:\\s*\"(?<currentValue>.*)\""
-            ],
-            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-        },
         {
             "description": "Update version from chart.sh",
             "fileMatch": ["(^|/)chart\\.sh$"],
