@@ -7,6 +7,18 @@
         "matchDepTypes": ["devDependencies"],
         "matchUpdateTypes": ["patch", "minor"],
         "groupName": "devDependencies (non-major)"
+      },
+      {
+        "matchUpdateTypes": ["patch"],
+        "addLabels": ["PATCH"]
+      },
+      {
+        "matchUpdateTypes": ["minor"],
+        "addLabels": ["MINOR"]
+      },
+      {
+        "matchUpdateTypes": ["major"],
+        "addLabels": ["MAJOR"]
       }
     ],
     "extends": [
