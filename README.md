@@ -30,6 +30,8 @@ Pour utiliser les conf sur des repos externes à git.sk5.io, on peut procéder d
 }
 ```
 
+⚙️ dans le second cas, il y aura d'autres choses à faire pour que Renovate soit fonctionnel, [voir documentation](https://www.notion.so/skale-5/Renovate-515c546f5b5d4c8da534cf18f1f29ced?pvs=4#82d18c16f71b42b88abb846b6bf67885).
+
 👨🏼‍🔧 veillez à bien adapter le workflow en fonction de votre cas. La liste des workflows disponnible est [ici](https://git.sk5.io/skale-5/renovate/-/tree/main/configs).
 
 <br />
