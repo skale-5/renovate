@@ -9,13 +9,13 @@ Des templates de configuration sont présents dans `/configs`.
 
 Selon le type de repo, les configurations ont des différences car Renovate ne cherche pas à update le même type de dépendances.
 
-Pour utiliser renovate sur un repo présent dans https://git.sk5.io/skale-5, il faut ajouter un fichier `.renovaterc` à la racine de celui-ci.
+Pour utiliser renovate sur un repo présent dans https://git.sk5.io/skale-5, il faut ajouter un fichier `.renovaterc` à la racine de celui-ci (c'est tout ce qu'il y a à faire).
 
 ```json
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "skale-5/renovate//configs/basic"
+        "skale-5/renovate//configs/<workflow>"
     ]
 }
 ```
@@ -25,10 +25,13 @@ Pour utiliser les conf sur des repos externes à git.sk5.io, on peut procéder d
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
-        "github>skale-5/renovate//configs/basic"
+        "github>skale-5/renovate//configs/<workflow>"
     ]
 }
 ```
+
+👨🏼‍🔧 veillez à bien adapter le workflow en fonction de votre cas. La liste des workflows disponnible est [ici](https://git.sk5.io/skale-5/renovate/-/tree/main/configs).
+
 <br />
 
 ## Maintenir à jour une version dans...
