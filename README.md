@@ -77,7 +77,7 @@ repos:
 cookiecutter-docs:
   stage: quality
   image:
-    name: "skale-5/cookiecutter-docs"
+    name: "skale5/cookiecutter-docs"
     entrypoint: [""]
   script:
     - cookiecutter-docs --only-verify --strict
