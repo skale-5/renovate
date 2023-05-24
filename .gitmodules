@@ -1,0 +1,3 @@
+[submodule "pre-commits"]
+	path = pre-commits
+	url = git@github.com:skale-5/pre-commits.git
