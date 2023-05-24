@@ -1,0 +1,7 @@
+{
+    "input1": ["value1", "value2"],
+    "input2": "value2",
+
+    "_DOC_input1": "description1",
+    "_DOC_input2": "description2"
+}

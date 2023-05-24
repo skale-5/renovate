@@ -1,0 +1,6 @@
+- id: cookiecutter-docs
+  name: cookiecutter-docs
+  description: Generate cookiecutter documentation using cookiecutter-docs
+  entry: cookiecutter-docs --strict
+  language: python
+  pass_filenames: false
