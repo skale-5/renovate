@@ -66,7 +66,7 @@ docker run --rm -it -v $(pwd):/data skale-5/cookiecutter-docs --input-file data/
 ```yaml
 repos:
   - repo: git@git.sk5.io:skale-5/docker-images/cookiecutter-docs.git
-    rev: main
+    rev: v1.0.1
     hooks:
       - id: cookiecutter-docs
 ```
@@ -77,7 +77,7 @@ repos:
 cookiecutter-docs:
   stage: quality
   image:
-    name: "skale5/cookiecutter-docs"
+    name: "skale5/cookiecutter-docs:1.O.1"
     entrypoint: [""]
   script:
     - cookiecutter-docs --only-verify --strict
