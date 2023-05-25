@@ -75,10 +75,10 @@ CHART_VERSION="16.13.0"
 
 <br />
 
-### Chart.yaml
-Uniquement valable pour maintenir "version" (du chart) ou "appVersion".
+### Un fichier YAML
+Uniquement valable pour maintenir "version" ou "appVersion" ou "tag".
 
-⚠️ La version des dépendances est maintenue automatiquement ; n'y ajoutez pas de commentaire !
+⚠️ Certaines version sont maintenues automatiquement, sans devoir y ajouter de commentaire, c'est le cas des dépendances dans les Charts ou de l'image docker dans un docker-compose ; n'y ajoutez pas de commentaire supplémentaire !
 
 Dans ce fichier, les commentaires prendront la forme suivante (même forme que pour chart.sh) :
 ```yaml
