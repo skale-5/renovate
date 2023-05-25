@@ -49,6 +49,14 @@
                 "\"_renovate\"\\s*:\\s*\"datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\"\\s*,\\s*\".*\"\\s*:\\s*\"(?<currentValue>.*)\""
             ],
             "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+        },
+        {
+            "description": "Update version from any yaml file",
+            "fileMatch": ["(^|/).*\\.ya?ml$"],
+            "matchStrings": [
+                "#\\s?renovate\\s?: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s*(version|appVersion|tag):\\s*['\"]?(?<currentValue>.*)['\"]?"
+            ],
+            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}helm{{/if}}"
         }
     ]
 }
