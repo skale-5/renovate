@@ -52,20 +52,21 @@ PREFIX_DOC = "_DOC_"
     is_flag=True,
 )
 def cli(
-    input_file: str,
-    output_file: str,
+    input_file: str = "cookiecutter.json",
+    output_file: str = "README.md",
     anchor_start: str = "<!-- BEGIN_COOKIECUTTER_DOCS -->",
     anchor_stop: str = "<!-- END_COOKIECUTTER_DOCS -->",
     strict: bool = False,
     only_verify: bool = False,
     version: bool = False,
 ) -> None:
+    """Main CLI function."""
     if version:
         click.echo(__version__)
         sys.exit(0)
 
     try:
-        with open(input_file, "r") as json_file:
+        with open(input_file, "r", encoding="utf-8") as json_file:
             data: OrderedDict[str, Any] = json.load(json_file, object_pairs_hook=OrderedDict)
     except FileNotFoundError:
         click.echo(click.style("Json file cannot be found.", fg="red"), err=True)
@@ -76,7 +77,7 @@ def cli(
 
     table: List[Entry] = []
     critical = False
-    for k, v in data.items():
+    for k, val in data.items():
         if not k.startswith("_"):
             description = data.get(f"{PREFIX_DOC}{k}") if data.get(f"{PREFIX_DOC}{k}") is not None else ""
             if description == "":
@@ -87,16 +88,16 @@ def cli(
                 if strict:
                     critical = True
             else:
-                if isinstance(v, list):
+                if isinstance(val, list):
                     table.append(
                         Entry(
                             key=k,
-                            value=f"{str(v)} (Default: {v[0]})",
+                            value=f"{str(val)} (Default: {val[0]})",
                             description=str(description),
                         )
                     )
                 else:
-                    table.append(Entry(key=k, value=v, description=str(description)))
+                    table.append(Entry(key=k, value=val, description=str(description)))
     if critical:
         sys.exit(1)
 
@@ -108,7 +109,7 @@ def cli(
     )
 
     try:
-        with open(output_file, "r") as markdown_file:
+        with open(output_file, "r", encoding="utf-8") as markdown_file:
             content = markdown_file.read()
     except FileNotFoundError:
         click.echo(click.style("Markdown file cannot be found", fg="red"), err=True)
@@ -132,7 +133,7 @@ def cli(
 
     # Écriture du contenu mis à jour dans le fichier Markdown
     try:
-        with open(output_file, "w") as markdown_file:
+        with open(output_file, "w", encoding="utf-8") as markdown_file:
             markdown_file.write(updated_content)
         click.echo("Markdown injection success.")
         sys.exit(0)

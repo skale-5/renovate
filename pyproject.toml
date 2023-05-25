@@ -38,3 +38,33 @@ lines_between_types = 1
 use_parentheses = true
 filter_files = true
 known_first_party = "poetry"
+
+[tool.black]
+ignore_missing_imports = true
+plugins = "pydantic.mypy"
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.pylint.messages_control]
+max-line-length = 120
+
+extension-pkg-whitelist = "pydantic"
+
+disable = [
+    "line-too-long",
+    "broad-except",
+    "no-member",
+    "logging-fstring-interpolation",
+    "no-name-in-module",
+    "too-few-public-methods",
+    "too-many-instance-attributes",
+    "duplicate-code",
+    "fixme",
+    "too-many-boolean-expressions",
+    "too-many-locals",
+    "too-many-statements",
+    "too-many-return-statements",
+    "too-many-arguments",
+    "too-many-branches",
+]

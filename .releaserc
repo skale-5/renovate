@@ -16,7 +16,8 @@
       {
         "assets": [
           "CHANGELOG.md",
-          "pyproject.toml"
+          "pyproject.toml",
+	  "cookiecutter_docs/version.py"
         ],
         "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}[skip ci]"
       }
