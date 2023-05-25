@@ -1,3 +1,10 @@
+## [1.1.1](https://git.sk5.io/skale-5/docker-images/cookiecutter-docs/compare/v1.1.0...v1.1.1) (2023-05-25)
+
+
+### Bug Fixes
+
+* fix pylint warnings and releaserc ([df83459](https://git.sk5.io/skale-5/docker-images/cookiecutter-docs/commit/df83459f077db5851144c96b6ad854cd6d7c61e7))
+
 # [1.1.0](https://git.sk5.io/skale-5/docker-images/cookiecutter-docs/compare/v1.0.1...v1.1.0) (2023-05-25)
 
 
