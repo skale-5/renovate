@@ -8,7 +8,7 @@ import pytest
 
 from click.testing import CliRunner
 
-from cookiecutter_docs import convert_json_to_markdown
+from cookiecutter_docs import cli
 
 
 OUTPUT_FILE = "outputs/README.md"
@@ -31,7 +31,7 @@ def test_convert_json_to_markdown_only_verify(create_output_file: function) -> N
     """Test with incomplete doc in cookiecutter.json (only verify)."""
     runner = CliRunner()
     result = runner.invoke(
-        convert_json_to_markdown,
+        cli,
         ["--input-file", "tests/incomplete.json", "--output-file", OUTPUT_FILE, "--only-verify"],
     )
     with open(OUTPUT_FILE, "r") as f:
@@ -51,7 +51,7 @@ def test_convert_json_to_markdown_strict(create_output_file: function) -> None:
 
     runner = CliRunner()
     result = runner.invoke(
-        convert_json_to_markdown,
+        cli,
         ["--input-file", "tests/incomplete.json", "--output-file", OUTPUT_FILE, "--strict"],
     )
     with open(OUTPUT_FILE, "r") as f:
@@ -71,7 +71,7 @@ def test_convert_json_to_markdown_incomplete(create_output_file: function) -> No
 
     runner = CliRunner()
     result = runner.invoke(
-        convert_json_to_markdown,
+        cli,
         ["--input-file", "tests/incomplete.json", "--output-file", OUTPUT_FILE],
     )
     with open(OUTPUT_FILE, "r") as f:
@@ -97,7 +97,7 @@ def test_convert_json_to_markdown_list(create_output_file: function) -> None:
 
     runner = CliRunner()
     result = runner.invoke(
-        convert_json_to_markdown,
+        cli,
         ["--input-file", "tests/list.json", "--output-file", OUTPUT_FILE],
     )
     with open(OUTPUT_FILE, "r") as f:

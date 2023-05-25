@@ -1,6 +1,6 @@
 """Init."""
 
-from .cookiecutter_docs import convert_json_to_markdown
+from .cookiecutter_docs import cli
 
 
-__all__ = ["convert_json_to_markdown"]
+__all__ = ["cli"]

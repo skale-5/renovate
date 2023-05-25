@@ -37,14 +37,15 @@ pip install -U git+ssh://git@git.sk5.io/skale-5/docker-images/cookiecutter-docs.
 
 # Available flags
 
-| Flag           | Description                                              | Default                          |
-| -------------- | -------------------------------------------------------- | -------------------------------- |
-| --input-file   | JSON file to configure cookiecutter                      | cookiecutter.json                |
-| --output-file  | Markdown file to inject documentation                    | README.md                        |
-| --anchor-start | Beginning line where the mardown is injected             | <!-- BEGIN_COOKIECUTTER_DOCS --> |
-| --anchor-stop  | Ending line where the mardown is injected                | <!-- END_COOKIECUTTER_DOCS -->   |
-| --strict       | Returns an error if the JSON file is not well documented | False                            |
-| --only-verify  | Do not override the file, only compare it                | False                            |
+| Flag           | Description                                              | Default                           |
+| -------------- | -------------------------------------------------------- | --------------------------------- |
+| --version      | Show version                                             | N/A                               |
+| --input-file   | JSON file to configure cookiecutter                      | cookiecutter.json                 |
+| --output-file  | Markdown file to inject documentation                    | README.md                         |
+| --anchor-start | Beginning line where the mardown is injected             | <\!-- BEGIN_COOKIECUTTER_DOCS --> |
+| --anchor-stop  | Ending line where the mardown is injected                | <\!-- END_COOKIECUTTER_DOCS -->   |
+| --strict       | Returns an error if the JSON file is not well documented | False                             |
+| --only-verify  | Do not override the file, only compare it                | False                             |
 
 
 ## Usage

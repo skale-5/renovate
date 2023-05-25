@@ -14,7 +14,7 @@ markdown = "^3.4.3"
 pytablewriter = "^0.64.2"
 
 [tool.poetry.scripts]
-cookiecutter-docs = "cookiecutter_docs.cookiecutter_docs:convert_json_to_markdown"
+cookiecutter-docs = "cookiecutter_docs.cookiecutter_docs:cli"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.3.1"

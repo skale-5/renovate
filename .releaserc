@@ -1,18 +1,30 @@
 {
-    "tagFormat": "v${version}",
-    "repositoryUrl": "https://git.sk5.io/skale-5/docker-images/cookiecutter-docs",
-    "plugins": [
-      "@semantic-release/commit-analyzer",
-      "@semantic-release/release-notes-generator",
-      "@semantic-release/changelog",
-      ["@semantic-release/exec", {
-        "generateNotesCmd": "sed -i 's/version = \"[^\"]*\"/version = \"${nextRelease.version}\"/' pyproject.toml"
-      }],
-      ["@semantic-release/git", {
-        "assets": ["CHANGELOG.md", "pyproject.toml"],
-        "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}[skip ci]"
-      }],
-      "@semantic-release/gitlab"
+  "tagFormat": "v${version}",
+  "repositoryUrl": "https://git.sk5.io/skale-5/docker-images/cookiecutter-docs",
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    [
+      "@semantic-release/exec",
+      {
+        "generateNotesCmd": "sed -i 's/version = \"[^\"]*\"/version = \"${nextRelease.version}\"/' pyproject.toml && sed -i 's/__version__ = \"[^\"]*\"/__version__ = \"${nextRelease.version}\"/' cookiecutter_docs/version.py"
+      }
     ],
-    "branches": ["main","master"]
-  }
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md",
+          "pyproject.toml"
+        ],
+        "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}[skip ci]"
+      }
+    ],
+    "@semantic-release/gitlab"
+  ],
+  "branches": [
+    "main",
+    "master"
+  ]
+}
