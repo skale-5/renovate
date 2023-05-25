@@ -1,3 +1,10 @@
+# [1.1.0](https://git.sk5.io/skale-5/docker-images/cookiecutter-docs/compare/v1.0.1...v1.1.0) (2023-05-25)
+
+
+### Features
+
+* add version option ([f9870e5](https://git.sk5.io/skale-5/docker-images/cookiecutter-docs/commit/f9870e5591ee20123ef51ebbebecf9fab0cec18a))
+
 ## [1.0.1](https://git.sk5.io/skale-5/docker-images/cookiecutter-docs/compare/v1.0.0...v1.0.1) (2023-05-24)
 
 
