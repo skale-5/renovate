@@ -59,7 +59,7 @@ cookiecutter-docs --input-file cookiecutter.json --output-file README.md
 ### Docker
 
 ```bash
-docker run --rm -it -v $(pwd):/data skale-5/cookiecutter-docs --input-file data/cookiecutter.json --output-file data/README.md
+docker run --rm -it -v $(pwd):/data skale5/cookiecutter-docs --input-file data/cookiecutter.json --output-file data/README.md
 ```
 
 ### Pre-commits
