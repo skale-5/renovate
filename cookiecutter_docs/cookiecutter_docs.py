@@ -97,7 +97,7 @@ def cli(
                         )
                     )
                 else:
-                    table.append(Entry(key=k, value=val, description=str(description)))
+                    table.append(Entry(key=k, value=str(val), description=str(description)))
     if critical:
         sys.exit(1)
 
