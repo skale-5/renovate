@@ -1,3 +1,10 @@
+## [1.1.2](https://git.sk5.io/skale-5/docker-images/cookiecutter-docs/compare/v1.1.1...v1.1.2) (2023-05-26)
+
+
+### Bug Fixes
+
+* convert value to string ([f440a14](https://git.sk5.io/skale-5/docker-images/cookiecutter-docs/commit/f440a14c77bdccaad39344a3310354ffdf3545d0))
+
 ## [1.1.1](https://git.sk5.io/skale-5/docker-images/cookiecutter-docs/compare/v1.1.0...v1.1.1) (2023-05-25)
 
 
