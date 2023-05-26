@@ -1,3 +1,10 @@
+## [1.1.3](https://git.sk5.io/skale-5/docker-images/cookiecutter-docs/compare/v1.1.2...v1.1.3) (2023-05-26)
+
+
+### Bug Fixes
+
+* trigger release of 1.1.3 ([db65885](https://git.sk5.io/skale-5/docker-images/cookiecutter-docs/commit/db65885552a6b93203876f47241a8a590894e46e))
+
 ## [1.1.2](https://git.sk5.io/skale-5/docker-images/cookiecutter-docs/compare/v1.1.1...v1.1.2) (2023-05-26)
 
 
