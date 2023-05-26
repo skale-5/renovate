@@ -2,6 +2,7 @@ ARG POETRY_VERSION=1.4.2
 
 FROM python:3.10-slim
 ARG POETRY_VERSION
+ARG NEW_TAG
 ENV PIP_DEFAULT_TIMEOUT=100 \
     PIP_DISABLE_PIP_VERSION_CHECK=1 \
     PIP_NO_CACHE_DIR=1 \
@@ -16,6 +17,8 @@ COPY poetry.lock pyproject.toml /app/
 # hadolint ignore=DL4006
 RUN poetry export -f requirements.txt --without-hashes
 COPY . /app
-RUN pip install . -U
+RUN sed -i "s|version = \"[^\"]*\"|version = \"$NEW_TAG\"|" pyproject.toml && \
+    sed -i "s|__version__ = \"[^\"]*\"|__version__ = \"$NEW_TAG\"|" cookiecutter_docs/version.py &&\
+    pip install . -U
 
 ENTRYPOINT ["cookicecutter-docs"]
