@@ -1,3 +1,10 @@
+## [1.1.4](https://git.sk5.io/skale-5/docker-images/cookiecutter-docs/compare/v1.1.3...v1.1.4) (2023-05-26)
+
+
+### Bug Fixes
+
+* fix docker image to avoid version issues ([5179987](https://git.sk5.io/skale-5/docker-images/cookiecutter-docs/commit/5179987354c150e2815807c6f96b940cdc622499))
+
 ## [1.1.3](https://git.sk5.io/skale-5/docker-images/cookiecutter-docs/compare/v1.1.2...v1.1.3) (2023-05-26)
 
 
