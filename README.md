@@ -103,3 +103,5 @@ dependencies:
 *Dans ce cas illustré, Renovate proposera ou fera toujours des changements de version pour "version" (du Chart), en utilisant la dernière version disponnible de la chart Helm de Redis dans la registry Bitnami.*
 
 *Il proposera ou fera également des changements de version pour "appVersion", en utilisant la dernière version disponnible du container Docker, dans la registry Docker Hub.*
+
+*Si votre gitlab-runner ne prend que les jobs taggués, il sera nécessaire de décommenter la ligne `tags` de .gitlab-ci.yml*
