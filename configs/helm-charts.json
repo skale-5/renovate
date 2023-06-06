@@ -1,6 +1,6 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "labels": ["RENOVATE", "TRAVAUX", "FORFAIT-RUN"],
+    "labels": ["RENOVATE"],
     "prHourlyLimit": 50,
     "packageRules": [
       {
@@ -21,7 +21,6 @@
         "addLabels": ["MAJOR"]
       }
     ],
-
     "extends": [
       "config:base",
       ":preserveSemverRanges",
@@ -32,7 +31,7 @@
       "group:recommended"
     ],
 
-    "enabledManagers": ["regex", "pre-commit", "gitlabci", "gitlabci-include", "terraform", "tflint-plugin", "helmv3", "helm-values", "kustomize"],
+    "enabledManagers": ["regex", "pre-commit", "gitlabci", "gitlabci-include", "helmv3", "helm-values"],
 
     "regexManagers": [
         {

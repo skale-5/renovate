@@ -43,12 +43,16 @@
             "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
         },
         {
-            "description": "Update version from any yaml file",
-            "fileMatch": ["(^|/).*\\.ya?ml$"],
-            "matchStrings": [
-                "#\\s?renovate\\s?: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s*(version|appVersion|tag):\\s*['\"]?(?<currentValue>.*)['\"]?"
+            "description": "Update version from any .yaml, .sh and Dockerfile files",
+            "fileMatch": [
+                "\\.ya?ml$",
+                "\\.sh$",
+                "(^|/|\\.)[Dd]ockerfile$"
             ],
-            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}helm{{/if}}"
+            "matchStrings": [
+                "#\\s?renovate\\s?: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s*.+\\s*[:=]\\s*['\"]?(?<currentValue>.*)['\"]?"
+            ],
+            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
         }
     ]
 }

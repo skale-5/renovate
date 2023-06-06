@@ -31,5 +31,20 @@
       "group:recommended"
     ],
 
-    "enabledManagers": ["regex", "pre-commit", "gitlabci", "gitlabci-include", "terraform", "tflint-plugin", "helmv3", "helm-values", "kustomize"]
+    "enabledManagers": ["regex", "pre-commit", "gitlabci", "gitlabci-include", "terraform", "tflint-plugin", "helmv3", "helm-values", "kustomize"],
+
+    "regexManagers": [
+        {
+            "description": "Update version from any .yaml, .sh and Dockerfile files",
+            "fileMatch": [
+                "\\.ya?ml$",
+                "\\.sh$",
+                "(^|/|\\.)[Dd]ockerfile$"
+            ],
+            "matchStrings": [
+                "#\\s?renovate\\s?: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s*.+\\s*[:=]\\s*['\"]?(?<currentValue>.*)['\"]?"
+            ],
+            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+        }
+    ]
 }
