@@ -63,24 +63,12 @@ Dans ce fichier, les commentaires prendront la forme suivante :
 
 <br />
 
-### chart.sh
-Uniquement valable pour maintenir "CHART_VERSION".
+### Un fichier YAML, SH, Dockerfile
+Valable pour maintenir la version de tout type de programme.
 
-Dans ce fichier, les commentaires prendront la forme suivante :
-```bash
-# renovate: datasource=helm depName=redis registryUrl=https://charts.bitnami.com/bitnami
-CHART_VERSION="16.13.0"
-```
-*Dans ce cas illustré, Renovate proposera ou fera toujours des changements de version pour "CHART_VERSION", en utilisant la dernière version disponnible de la chart Helm de Redis dans la registry Bitnami.*
+⚠️ Certaines version sont maintenues automatiquement, sans devoir y ajouter de commentaire, c'est le cas des dépendances dans les Charts ou de l'image docker dans un docker-compose ou Dockerfile ; n'y ajoutez pas de commentaire supplémentaire !
 
-<br />
-
-### Un fichier YAML
-Uniquement valable pour maintenir "version" ou "appVersion" ou "tag".
-
-⚠️ Certaines version sont maintenues automatiquement, sans devoir y ajouter de commentaire, c'est le cas des dépendances dans les Charts ou de l'image docker dans un docker-compose ; n'y ajoutez pas de commentaire supplémentaire !
-
-Dans ce fichier, les commentaires prendront la forme suivante (même forme que pour chart.sh) :
+Dans ce fichier YAML, les commentaires prendront la forme suivante (même forme que les fichiers SH et Dockerfile) :
 ```yaml
 apiVersion: v2
 name: redis
