@@ -34,4 +34,4 @@
 
     "enabledManagers": ["regex", "pre-commit", "gitlabci", "gitlabci-include"]
 
-  }
+}

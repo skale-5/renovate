@@ -49,6 +49,18 @@
                 "\"_renovate\"\\s*:\\s*\"datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\"\\s*,\\s*\".*\"\\s*:\\s*\"(?<currentValue>.*)\""
             ],
             "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+        },
+        {
+            "description": "Update version from any .yaml, .sh and Dockerfile files",
+            "fileMatch": [
+                "\\.ya?ml$",
+                "\\.sh$",
+                "(^|/|\\.)[Dd]ockerfile$"
+            ],
+            "matchStrings": [
+                "#\\s?renovate\\s?: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s*.+\\s*[:=]\\s*['\"]?(?<currentValue>.*)['\"]?"
+            ],
+            "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
         }
     ]
 }
