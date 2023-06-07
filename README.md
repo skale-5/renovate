@@ -4,12 +4,10 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/pre-commit/pre-commit)
 
 ## Exemples
-
-Des templates de configuration sont présents dans `/configs`.
-
 Selon le type de repo, les configurations ont des différences car Renovate ne cherche pas à update le même type de dépendances.
+La liste des workflows est présente dans `/configs`.
 
-Pour utiliser renovate sur un repo présent dans https://git.sk5.io/skale-5, il faut ajouter un fichier `.renovaterc` à la racine de celui-ci (c'est tout ce qu'il y a à faire).
+Pour utiliser renovate sur un repo présent dans https://git.sk5.io/skale-5, il faut ajouter un fichier `.renovaterc` à la racine de celui-ci (c'est tout ce qu'il y a à faire). Quand vous indiquerez le workflow dans le fichier `.renovaterc`, n'ajoutez pas l'extension JSON.
 
 ```json
 {
