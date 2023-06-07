@@ -32,6 +32,15 @@
       "group:recommended"
     ],
 
+    "hostRules": [
+        {
+            "matchHost": "app.terraform.io/Skale-5",
+            "encrypted": {
+              "token": "wcFMAwj6vUQcOj2jAQ//QgdMTFeWCJp6iyWUJw4UIQjMpSbHyCxcjpQc9j6uOhNuBupkFl+eN5JOZ6QuJKZxEPBFAGvjr84ExzFEWPDAsQN1zGTlljABcn4W2rsM9YiKlRsAeH9eeIF4yaQvk38pJWD2UOq2DJGFKslPxHaBM59IU73DBl2Yn1k1leCsOlfhe8WNwArLLCWKvjaqTLUdD6tbt9vml24ucMCsIec5W0hSMBPo3qGaFXWamnarSJUhoHGZMzjP0K9/nKu8cop+lCjKlrAl4H7D1UtxcfUcZaljqI4h6xu/WHROMMmDQ4yWNoLalNbjEnxZ9XueFLq9cgOOmjHwhKhvLoyGo0hB753TXgjLJ4dd9B0QlWngs9W68bdL0tSS0hRxbQbOogIUGSFoybuM62KzoBQhQJvyvyFumnREMH0EM9Cu+e1XusFH0L0PRANxnX8+WnBB56Wg5xKStELLLWq20zt3kEEc0y11gfS9zox4MBNCphQme8P4td5a5eoAigcIOY1wDR/5Sx0P+ZUo8ExUlJeHmkBG7AH+Kzld9oRE+gVxsNx7anEkMF5d+HhHSsaFgrJXYAe6MIR9YUL7pFWaZDiPqNXQF5ks/CCO2GjJlqWMUYsUsMTN/XBdHgN/HkOdX7isHTLev3OhhXdnHHIdMtPQMKodqsbgTB5QSghjUBcnecMizbrSsAEdLwqOJ4TWbMm0oRN8Bfz48tobrNNm8o2Qv/fA42EMOQ2fqaCpPJlBUb2LTOxJEww/B/sxkI98vUz4GbNSZetkBG1+IyL5zAdp4PrNVqft6gsBsAbGcoWilpE/fInPbxypqBbjJ2RFLqXN+P03ncpkCtr3jNJC9DPLBFviCT6ov8QKst5X/susBwgLTZsa0pTqjpqf7MrbJCNf8YJ15JIGMvdP5qAQcoPSJxx2MBvx"
+            }
+        }
+    ],
+
     "enabledManagers": ["regex", "pre-commit", "gitlabci", "gitlabci-include", "terraform", "tflint-plugin", "helmv3", "helm-values", "kustomize"],
 
     "regexManagers": [
