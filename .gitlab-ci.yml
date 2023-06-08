@@ -11,6 +11,8 @@ include:
 
 renovate:
   script:
+    - echo $RENOVATE_PRIVATE_KEY_FILE
+    - echo =====================================
     - renovate $RENOVATE_EXTRA_FLAGS --private-key-path $RENOVATE_PRIVATE_KEY_FILE
   # Required if your runners does not support untagged jobs
   #tags:
