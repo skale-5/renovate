@@ -10,6 +10,8 @@ include:
   - remote: https://gitlab.com/renovate-bot/renovate-runner/-/raw/v12.14.1/templates/renovate.gitlab-ci.yml
 
 renovate:
+  script:
+    - renovate $RENOVATE_EXTRA_FLAGS --private-key $RENOVATE_PRIVATE_KEY_FILE
   # Required if your runners does not support untagged jobs
   #tags:
   #  - renovate
