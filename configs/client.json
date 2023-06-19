@@ -41,7 +41,7 @@
         }
     ],
 
-    "enabledManagers": ["regex", "pre-commit", "gitlabci", "gitlabci-include", "terraform", "tflint-plugin", "helmv3", "helm-values", "kustomize"],
+    "enabledManagers": ["regex", "git-submodules", "pre-commit", "gitlabci", "gitlabci-include", "terraform", "tflint-plugin", "helmv3", "helm-values", "kustomize"],
 
     "regexManagers": [
         {
