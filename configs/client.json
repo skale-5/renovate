@@ -45,7 +45,7 @@
 
     "git-submodules": {
         "enabled": true
-    }
+    },
 
     "regexManagers": [
         {
