@@ -62,6 +62,16 @@
                 "#\\s?renovate\\s?: datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\\s*.+\\s*[:=]\\s*['\"]?(?<currentValue>.*)['\"]?"
             ],
             "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+        },
+        {
+            "description": "Update Helm Charts in Argo CD apps Helm values",
+            "fileMatch": [
+                "argo.*/.*\\.ya?ml$"
+            ],
+            "matchStrings": [
+                "repoURL: ['\"]?(?<registryUrl>.*)['\"]?\\s*chart: ['\"]?(?<depName>.*)['\"]?\\s*targetRevision: ['\"]?(?<currentValue>.*)['\"]?\\s*(?<datasource>.*):"
+            ],
+            "versioningTemplate": "helm"
         }
     ]
 }
