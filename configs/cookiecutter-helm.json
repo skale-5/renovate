@@ -31,6 +31,14 @@
       "group:recommended"
     ],
 
+    "postUpgradeTasks": {
+        "commands": [
+            "cookiecutter-docs --strict || true"
+        ],
+        "fileFilters": ["**/*"],
+        "executionMode": "branch"
+    },
+
     "enabledManagers": ["regex", "pre-commit", "gitlabci", "gitlabci-include", "helmv3", "helm-values"],
 
     "regexManagers": [

@@ -2,16 +2,22 @@ include:
   - project: 'skale-5/gitlab-ci'
     ref: main
     file: '/templates/workflows/.gitlab-ci.common.yml'
-
-
-# RENOVATE
-
-include:
   - remote: https://gitlab.com/renovate-bot/renovate-runner/-/raw/v12.14.1/templates/renovate.gitlab-ci.yml
 
 renovate:
+  image: ghcr.io/renovatebot/renovate:full
   # Required if your runners does not support untagged jobs
   #tags:
   #  - renovate
+  before_script:
+    - cd /tmp
+    # TERRAFORM-DOCS
+    - curl -sSLo ./terraform-docs.tar.gz https://terraform-docs.io/dl/v0.16.0/terraform-docs-v0.16.0-$(uname)-amd64.tar.gz
+    - tar -xzf terraform-docs.tar.gz
+    - chmod +x terraform-docs
+    - mv terraform-docs $HOME/bin
+    # COOKIECUTTER-DOCS
+    - pip3 install -U git+https://github.com/skale-5/cookiecutter-docs.git@v1.1.7
+    - cd -
   rules:
     - if: '$CI_PIPELINE_SOURCE == "schedule" && $SCHEDULE_ACTION == "renovate"'

@@ -31,6 +31,15 @@
       "group:recommended"
     ],
 
+    "postUpgradeTasks": {
+        "commands": [
+            "echo \"Zm9ybWF0dGVyOiAibWFya2Rvd24gdGFibGUiCm91dHB1dDoKICBmaWxlOiAiUkVBRE1FLm1kIgogIG1vZGU6IGluamVjdAogIHRlbXBsYXRlOiB8LQogICAgPCEtLSBCRUdJTk5JTkcgT0YgUFJFLUNPTU1JVC1URVJSQUZPUk0gRE9DUyBIT09LIC0tPgogICAge3sgLkNvbnRlbnQgfX0KICAgIDwhLS0gRU5EIE9GIFBSRS1DT01NSVQtVEVSUkFGT1JNIERPQ1MgSE9PSyAtLT4K\" | base64 -d > tfdocs.yml && terraform-docs --config tfdocs.yml . && rm -f tfdocs.yml || true",
+            "cookiecutter-docs --strict || true"
+        ],
+        "fileFilters": ["**/*"],
+        "executionMode": "branch"
+      },
+
     "enabledManagers": ["regex", "pre-commit", "gitlabci", "gitlabci-include", "terraform", "tflint-plugin", "kustomize"],
 
     "regexManagers": [
