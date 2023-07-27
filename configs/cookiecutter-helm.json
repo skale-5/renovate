@@ -46,7 +46,7 @@
             "description": "Update version from cookiecutter.json",
             "fileMatch": ["^cookiecutter\\.json$"],
             "matchStrings": [
-                "\"_renovate\"\\s*:\\s*\"datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\"\\s*,\\s*\".*\"\\s*:\\s*\"(?<currentValue>.*)\""
+                "\"_renovate(_.+)?\"\\s*:\\s*\"datasource=(?<datasource>.*?) depName=(?<depName>.*?)( registryUrl=(?<registryUrl>.*?))?( versioning=(?<versioning>.*?))?\"\\s*,\\s*\".*\"\\s*:\\s*\"(?<currentValue>.*)\""
             ],
             "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
         },
