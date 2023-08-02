@@ -69,9 +69,11 @@
                 "argo.*/.*\\.ya?ml$"
             ],
             "matchStrings": [
-                "repoURL: ['\"]?(?<registryUrl>.*)['\"]?\\s*chart: ['\"]?(?<depName>.*)['\"]?\\s*targetRevision: ['\"]?(?<currentValue>.*)['\"]?\\s*(?<datasource>.*):"
+                "repoURL: ['\"]?(?<registryUrl>.*)['\"]?\\s*chart: ['\"]?(?<depName>.*)['\"]?\\s*targetRevision: ['\"]?(?<currentValue>.*)['\"]?"
             ],
+            "datasourceTemplate": "{{#if (containsString registryUrl 'docker.io')}}docker{{else}}helm{{/if}}",
+            "registryUrlTemplate": "{{#if (containsString registryUrl 'docker.io')}}https://index.docker.io{{else}}{{{registryUrl}}}{{/if}}",
             "versioningTemplate": "helm"
-        }
+      }
     ]
 }
