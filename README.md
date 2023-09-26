@@ -32,6 +32,10 @@ Pour utiliser les conf sur des repos externes à git.sk5.io, on peut procéder d
 
 👨🏼‍🔧 veillez à bien adapter le workflow en fonction de votre cas. La liste des workflows disponnible est [ici](https://git.sk5.io/skale-5/renovate/-/tree/main/configs).
 
+
+‼️ Le token chiffré présent dans cette configuration est le token wearedevops. Il est utilisé par tous les clients qui utilise la config clients de ce repo.
+
+
 <br />
 
 ## Maintenir à jour une version dans...
