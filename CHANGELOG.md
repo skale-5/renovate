@@ -1,3 +1,10 @@
+# [1.1.0](https://git.sk5.io/skale-5/renovate/compare/v1.0.0...v1.1.0) (2023-10-01)
+
+
+### Features
+
+* delete HostRules in client.json file ([c18471b](https://git.sk5.io/skale-5/renovate/commit/c18471b67fb2e49ac15d61f216250519e7c18a0d))
+
 # 1.0.0 (2023-07-30)
 
 
